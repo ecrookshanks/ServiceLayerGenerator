@@ -1,0 +1,68 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DALGenLib", "DALGenLib\DALGenLib.csproj", "{706B6D39-299C-4768-9DF6-B7262DC0FD9C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleSettings", "ConsoleSettings\ConsoleSettings.csproj", "{783D51E8-4760-450A-A0FC-40A9C6FB247A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DALUnitTests", "DALUnitTests\DALUnitTests.csproj", "{3AE17EAD-BFD8-489F-997C-B7206FEA72CF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServiceRepoGen", "ServiceRepoGen\ServiceRepoGen.csproj", "{F3F37CB2-AA9D-45EE-88F0-C7E756B10F81}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Templates", "Templates", "{CCB63273-C90E-44DD-8DCE-27268C9B3BFE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{2DD44EF3-C539-4C91-8CC1-7477E6300974}"
+	ProjectSection(SolutionItems) = preProject
+		..\Templates\Services\ITemplateService.cs = ..\Templates\Services\ITemplateService.cs
+		..\Templates\Services\TemplateService.cs = ..\Templates\Services\TemplateService.cs
+		..\Templates\Services\TemplateService2.cs = ..\Templates\Services\TemplateService2.cs
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Repository", "Repository", "{8FB327F2-58F5-487D-84D8-3A6E33582A98}"
+	ProjectSection(SolutionItems) = preProject
+		..\Templates\Repository\IRepository.cs = ..\Templates\Repository\IRepository.cs
+		..\Templates\Repository\ITemplateRepository2.cs = ..\Templates\Repository\ITemplateRepository2.cs
+		..\Templates\Repository\TemplateRepository.cs = ..\Templates\Repository\TemplateRepository.cs
+		..\Templates\Repository\TemplateRepository2.cs = ..\Templates\Repository\TemplateRepository2.cs
+		..\Templates\Repository\TemplateRepositoryUsing.cs = ..\Templates\Repository\TemplateRepositoryUsing.cs
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "extensions", "extensions", "{E362B544-7880-4644-B94B-86CE2C77C38B}"
+	ProjectSection(SolutionItems) = preProject
+		..\Templates\Services\extensions\TemplateService.cs = ..\Templates\Services\extensions\TemplateService.cs
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{706B6D39-299C-4768-9DF6-B7262DC0FD9C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{706B6D39-299C-4768-9DF6-B7262DC0FD9C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{706B6D39-299C-4768-9DF6-B7262DC0FD9C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{706B6D39-299C-4768-9DF6-B7262DC0FD9C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{783D51E8-4760-450A-A0FC-40A9C6FB247A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{783D51E8-4760-450A-A0FC-40A9C6FB247A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{783D51E8-4760-450A-A0FC-40A9C6FB247A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{783D51E8-4760-450A-A0FC-40A9C6FB247A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3AE17EAD-BFD8-489F-997C-B7206FEA72CF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3AE17EAD-BFD8-489F-997C-B7206FEA72CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3AE17EAD-BFD8-489F-997C-B7206FEA72CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3AE17EAD-BFD8-489F-997C-B7206FEA72CF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F3F37CB2-AA9D-45EE-88F0-C7E756B10F81}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F3F37CB2-AA9D-45EE-88F0-C7E756B10F81}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F3F37CB2-AA9D-45EE-88F0-C7E756B10F81}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F3F37CB2-AA9D-45EE-88F0-C7E756B10F81}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{2DD44EF3-C539-4C91-8CC1-7477E6300974} = {CCB63273-C90E-44DD-8DCE-27268C9B3BFE}
+		{8FB327F2-58F5-487D-84D8-3A6E33582A98} = {CCB63273-C90E-44DD-8DCE-27268C9B3BFE}
+		{E362B544-7880-4644-B94B-86CE2C77C38B} = {2DD44EF3-C539-4C91-8CC1-7477E6300974}
+	EndGlobalSection
+EndGlobal
