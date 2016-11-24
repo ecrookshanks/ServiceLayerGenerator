@@ -148,6 +148,10 @@ namespace ServiceRepoGen
                 lblStatus.Text = "Critical Error!  Files not generated.";
             }
         }
-        
+
+        private void Help_Click_1(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

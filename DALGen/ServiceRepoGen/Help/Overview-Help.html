@@ -1,0 +1,151 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>DALGen - Overview and Usage</title>
+</head>
+<body>
+    <h1>DALGen Overview and Usage.</h1>
+    <p>This file is a basic overview and usage document for DALGen.  It will explain the rational behind
+    the application and its intended usage.</p>
+    <h2>Application Overview</h2>
+    <div class="para">
+        <h3>Rationale</h3>
+        <div class="internalPara">
+            Starting with EF 6 and EF Tools 6.1, Microsoft introduced a concept known as 'Code First from a Database' that allowed
+            the 'Code First' approach of using POCO classes and DBContext, but would generate those files based on
+            existing tables. In certain circumstances this is a very large advantage as process and procedure may 
+            require a database design first, followed by a coding design to match.  This allows the 'lightness' of
+            the code first approach (no EDMX black box) while also satisfying the physical database design requirement.
+        </div>
+        <div class="internalPara">
+            DALGen was written for a very specific purpose and takes place *after* the POCO classes and DBContext classes 
+            have been generated.  (Phase 2 of DALGen may do ALL of this in one step but not as of yet.)  
+            <p>
+                Steps for doing using the MS Wizard to generate the POCO classes and DBContext 
+                can be found <a href="https://msdn.microsoft.com/en-us/library/jj200620(v=vs.113).aspx">here on MSDN</a>.
+            </p>
+            Essentially DALGen looks at the same database and generates classes necessary for the Repository/Service pattern.  
+            Otherwise known as the .Data Access Layer'.
+            Specifically in our ASP.NET MVC project, the controller methods call the Services and perform actions using those methods. 
+            The service methods in turn use the Repository methods to access the data.  Both the Service and Repository 
+            objects are implemented using interfaces and classes to allow plugging of Mock and/or testing classes when desired.
+            <p>
+                The rest of this page will document all the options and explain the typical use of DALGen along with some of
+                the 'gotchas' that I've run across. Please send me additional critical comments and/or enhancment suggestions.  
+                Send them to ed@nokelservices.com.  Thanks!
+            </p>
+        </div>
+        
+        <h3>Usage</h3>
+        <div class="internalPara">
+            Starting the application results in a simple Windows GUI client with several tabs across the top.  Depending on the 
+            configuration (discussed later) there may be entries already in the input text boxes.  Each one of these tabs and 
+            options are discussed below.
+
+            <p>
+                <b>NameSpaces and Context</b><br />
+                Discuss the name tab.
+            </p>
+            <p>
+                <b>Folders</b><br />
+                Discuss the tab.
+            </p>
+            <p>
+                <b>Templates</b><br />
+                Discuss the tab.
+            </p>
+            <p>
+                <b>Database</b><br />
+                Discuss the tab.
+            </p>
+            <p>
+                <b>Miscellaneous</b><br />
+                Discuss the tab.
+            </p>
+
+            <p>
+                <h4>Configuration Files</h4>
+            </p>
+        </div>
+
+        <h3>Template Files</h3>
+        <div class="internalPara">
+            DALGen uses file Templates instead of generating files from scratch.  This was chosen to provide customizable
+            boilerplate code that allows changing the templates instead of changing the code.  This allows for a much greater degree of
+            flexability than a complete 'generation from scratch' approach; each set of files can be edited with custom comments,
+            access specifiers, or even as part of a larger class hierarchy.
+            <p />
+            Taking a page from many JavaScript libraries, the template files use a set of replaceable tokens that are delimited by
+            curly brackets, such as {{replaceMe}} signifies an item that will be replaced in code.  The following is a list of
+            the tokens, which correspond to the entries discussed in the 'Usage' section.
+            <ul>
+                <li>{{modelNameSpace}}</li>
+                <li>{{serviceNameSpace}}</li>
+                <li>{{entityName}}</li>
+                <li>{{entityNameRP}}</li>
+                <li>{{generatedTime}}</li>
+                <li>{{repositoryNameSpace}}</li>
+                <li>{{contextName}}</li>
+            </ul>
+
+
+        </div>
+
+        <h3>Output Files</h3>
+        <div class="internalPara">
+            This section discusses the Output files.
+
+        </div>
+
+        <h3>Known Issues</h3>
+        <div class="internalPara">
+            This section lists the known issues.
+
+        </div>
+
+        <h3>Code Details</h3>
+        <div class="internalPara">
+            This section discusses the Project structure, coding techniques, and other specifics about the code itself.
+
+        </div>
+
+
+    </div>
+
+    
+<style>
+    body 
+    {
+    font-size: .9em;
+    font-family: "Trebuchet MS", Verdana, Helvetica, Sans-Serif;
+    margin: 5;
+    padding: 5;
+    color: #696969;
+    }
+
+    a:link 
+    {
+        color: #034af3;
+        text-decoration: underline;
+    }
+    
+    .para
+    {
+        width: 800px;
+        border: 1px solid black;
+        padding: 10px;
+        margin: 10px;
+    }
+    .internalPara
+    {
+        padding: 10px;
+        margin: 10px;
+    }
+
+
+</style>
+
+</body>
+</html>

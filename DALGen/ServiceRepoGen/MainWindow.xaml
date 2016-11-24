@@ -7,11 +7,11 @@
     <StackPanel Orientation="Vertical" >
         <Menu Height="30">
             <MenuItem Header="File">
-                <MenuItem Header="Open..." />
+                <MenuItem Header="Open..." Click="MenuItem_Click" />
             </MenuItem>
             
             <MenuItem Header="Help">
-                
+                <MenuItem Header="Help File..." Click="Help_Click_1" />
             </MenuItem>
             <!-- menu items here-->
         </Menu>
@@ -76,7 +76,7 @@
 
                     <TextBlock Grid.Column="0" Grid.Row="2"  Text="Service Template:" VerticalAlignment="Center"/>
                     <TextBox Name="txtServiceTemplate" Grid.Column="1" Grid.Row="2" Margin="2px"
-                             Text="{Binding Path=Settings.ServiceNameSpace}" />
+                             Text="{Binding Path=Settings.ServiceTemplateFolder}" />
 
                     <TextBlock Grid.Column="0" Grid.Row="3"  Text="Repository Template:" VerticalAlignment="Center" />
                     <TextBox Name="txtRepoTemplate" Grid.Column="1" Grid.Row="3" Margin="2px"  
@@ -195,6 +195,12 @@
                     
                 
                 </Grid>
+            </TabItem>
+            <TabItem Header="Actions">
+                <Button Content="Generate Files" Name="btnGen" Click="btnGen_Click"
+                        Width="120" Height="30"
+                        HorizontalAlignment="Center" VerticalAlignment="Center"
+                        ></Button>
             </TabItem>
         </TabControl>
 
