@@ -45,6 +45,7 @@ namespace NokelServices.DALGenLib
     {
       if (isTest)
       {
+        _log.Info("RUNNING IN TEST MODE - SIMPLE Sleep AND NO FILES GENERATED");
         Thread.Sleep(8000);
         return true;
       }
