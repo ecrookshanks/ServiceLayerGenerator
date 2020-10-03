@@ -1,14 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text;
 using System.IO;
 using System.Data.SqlClient;
 using System.Configuration;
-
 using log4net;
-
 using NokelServices.DALGenLib.Configuration;
+using System.Threading;
 
 namespace NokelServices.DALGenLib
 {
@@ -42,6 +40,20 @@ namespace NokelServices.DALGenLib
         {
             this.Settings = settings;
         }
+
+    public Boolean GenerateAllFiles(Boolean isTest)
+    {
+      if (isTest)
+      {
+        _log.Info("RUNNING IN TEST MODE - SIMPLE Sleep AND NO FILES GENERATED");
+        Thread.Sleep(8000);
+        return true;
+      }
+      else
+      {
+        return this.GenerateAllFiles();
+      }
+    }
 
         public Boolean GenerateAllFiles()
         {
