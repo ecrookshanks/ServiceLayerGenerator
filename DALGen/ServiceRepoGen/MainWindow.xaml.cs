@@ -43,7 +43,7 @@ namespace ServiceRepoGen
 
       return Task.Run(() =>
       {
-        return pd.GenerateAllFiles(true);
+        return pd.GenerateAllFiles();
       });
     }
 
