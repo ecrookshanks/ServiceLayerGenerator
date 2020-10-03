@@ -14,8 +14,6 @@ namespace ServiceRepoGen
   /// </summary>
   public partial class MainWindow : Window
   {
-    BackgroundWorker worker = new BackgroundWorker();
-
     public MainWindow()
     {
       InitializeComponent();
