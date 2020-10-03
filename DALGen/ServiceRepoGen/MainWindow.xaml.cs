@@ -39,13 +39,10 @@ namespace ServiceRepoGen
       DALSettings settings = new DALSettings(dss);
       ProcessDAL pd = new ProcessDAL(settings);
 
-      return Task.Run(() =>
-      {
-        return pd.GenerateAllFiles();
-      });
+      return Task.Run(() => pd.GenerateAllFiles());
     }
 
-    private async void ProcessFiles()
+    private async Task ProcessFiles()
     {
       DALSettingsSection runSettings = new DALSettingsSection();
 

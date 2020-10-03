@@ -17,13 +17,7 @@ namespace DALUnitTests
         [TestInitialize]
         public void SetupSettings()
         {
-            // HACK to be able to load the config section.
-            //using (var sw = File.CreateText(".\\App"))
-            //{
-            //    sw.Close();
-            //}
-            // Assuming the file "App" exists in the output folder.
-            var config = ConfigurationManager.OpenExeConfiguration(".\\App");
+            var config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
             dss = (DALSettingsSection)config.Sections["dalSettings"];
 
         }

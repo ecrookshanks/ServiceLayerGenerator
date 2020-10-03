@@ -21,7 +21,7 @@ namespace DALUnitTests
         {
             // Read the settings from the config file.
             // Assume "App" file exists in the output folder
-            var config = ConfigurationManager.OpenExeConfiguration(".\\App");
+            var config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
             _dssConfigured = (DALSettingsSection)config.Sections["dalSettings"];
             _settingsConfigured = new DALSettings(_dssConfigured);
 
