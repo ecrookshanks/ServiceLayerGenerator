@@ -66,12 +66,17 @@ namespace ServiceRepoGen
       runSettings.CreateOutputFolders = this.cbCreateOutputFolders.IsChecked.Value;
 
       lblStatus.Text = "Generating files in the background.";
-
+      
+      var watch = System.Diagnostics.Stopwatch.StartNew();
+      
       bool success = await GenerateFilesAsync(runSettings);
+
+      watch.Stop();
+      long elapsed = watch.ElapsedMilliseconds;
 
       if (success)
       {
-        lblStatus.Text = "Files Generated successfully.";
+        lblStatus.Text = $"Files Generated successfully in {elapsed} milliseconds";
       }
       else
       {
@@ -115,9 +120,9 @@ namespace ServiceRepoGen
 
     }
 
-    private void btnGen_Click(object sender, RoutedEventArgs e)
+    private async void btnGen_Click(object sender, RoutedEventArgs e)
     {
-      ProcessFiles();
+      await ProcessFiles();
     }
 
     private void Help_Click_1(object sender, RoutedEventArgs e)
